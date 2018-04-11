@@ -3,5 +3,6 @@ class Asteroid
   def initialize(info)
     @name = info[:name]
     @neo_reference_id = info[:neo_reference_id]
+    @is_potentially_hazardous = info[:is_potentially_hazardous_asteroid]
   end
 end
