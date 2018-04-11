@@ -31,11 +31,20 @@ class DaySearchResults
   end
 
   def self.most_dangerous_day(data)
-    binding.pry
     new(data).most_dangerous_day
   end
 
   def asteroids_by_day(data)
-    data.map
+    data.transform_values do |value|
+      value.select do |asteroid|
+        asteroid[:is_potentially_hazardous_asteroid]
+      end.count
+    end
+  end
+
+  def most_dangerous_day
+    @results.sort_by do |key, value|
+      value
+    end.last[0].to_s
   end
 end
