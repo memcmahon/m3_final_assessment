@@ -20,6 +20,22 @@ class DangerDaySearchService
     end
 
     raw_data = JSON.parse(response.body, symbolize_names: true)
+
+    DaySearchResults.most_dangerous_day(raw_data[:near_earth_objects])
+  end
+end
+
+class DaySearchResults
+  def initialize(data)
+    @results = asteroids_by_day(data)
+  end
+
+  def self.most_dangerous_day(data)
     binding.pry
+    new(data).most_dangerous_day
+  end
+
+  def asteroids_by_day(data)
+    data.map
   end
 end
