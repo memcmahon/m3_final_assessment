@@ -19,7 +19,11 @@ class DaySearchResults
     day = @results.sort_by do |key, value|
       value
     end.last[0].to_s
-    
-    DateTime.strptime(day, "%Y-%m-%d").strftime("%B %-d, %Y")
+
+    @dangerday = DateTime.strptime(day, "%Y-%m-%d").strftime("%B %-d, %Y")
+  end
+
+  def self.dangeroids
+    DangerDaySearchService.dangeroids(@dangerday)
   end
 end

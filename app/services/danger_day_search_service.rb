@@ -12,4 +12,18 @@ class DangerDaySearchService
 
     DaySearchResults.most_dangerous_day(raw_data[:near_earth_objects])
   end
+
+  def self.dangeroids(dangerday)
+    conn = Faraday.new("https://api.nasa.gov/ne0/rest/v1/feed")
+
+    response = conn.get do |req|
+      req.params["start_date"] = dangerday
+      req.params["end_date"] = dangerday
+      req.params["api_key"] = ENV["NASA_API_KEY"]
+    end
+
+    raw_data = JSON.parse(response.body, symbolize_names: true)
+
+    binding.pry
+  end
 end

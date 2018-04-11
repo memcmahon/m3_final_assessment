@@ -5,4 +5,10 @@
 
 <div class="most-danger">
   <h2> <%= @most_dangerous_day %> </h2>
+  <ul>
+    <% @dangeroids.each do |asteroid| %>
+      <li>Name: <%= asteroid.name %></li>
+      <li>NEO Reference ID: <%= asteroid.neo_id %></li> 
+    <% end %>
+  </ul>
 </div>
