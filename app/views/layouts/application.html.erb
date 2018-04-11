@@ -15,8 +15,8 @@
         <section class="inner-nav">
           <%= image_tag "logo.png", class: "logo" %>
           <%= form_tag :most_dangerous_day, method: :get, class: "date-search" do %>
-            <%= text_field_tag :start_date, "START DATE", class: "input datepicker" %>
-            <%= text_field_tag :end_date, "END DATE", class: "input datepicker" %>
+            <%= date_field_tag :start_date, "START DATE", class: "input datepicker" %>
+            <%= date_field_tag :end_date, "END DATE", class: "input datepicker" %>
             <section>
               <%= submit_tag "Determine Most Dangerous Day", class: "btn btn-outline" %>
             </section>
