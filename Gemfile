@@ -18,6 +18,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
   gem 'rspec-rails'
   gem 'capybara'
   gem "factory_bot_rails"
