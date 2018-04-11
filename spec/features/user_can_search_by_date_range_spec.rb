@@ -5,8 +5,8 @@ describe "As a guest user" do
     it "I can search by date range" do
       visit '/'
 
-      fill_in "Start Date", with: "2018-01-01"
-      fill_in "End Date", with: "2018-01-01"
+      fill_in "start_date", with: "2018-01-01"
+      fill_in "end_date", with: "2018-01-07"
       click_on "Determine Most Dangerous Day"
 
       expect(current_path).to eq("/most_dangerous_day")
