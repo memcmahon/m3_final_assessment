@@ -6,11 +6,7 @@ class FavAsteroid
     @asteroid = Asteroid.find(asteroid)
   end
 
-  def self.find(favorite, asteroid)
-    new(favorite, asteroid)
-  end
-
   def self.search(favorite)
-    NasaSearchService.get_asteroid(favorite)
+    new(favorite, NasaSearchService.get_asteroid(favorite))
   end
 end

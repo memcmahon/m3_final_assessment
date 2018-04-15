@@ -11,7 +11,7 @@ class NasaSearchService
       req.params["api_key"] = ENV["NASA_API_KEY"]
     end
 
-    DaySearchResults.results(parse(response))
+    parse(response)
   end
 
   def self.get_asteroid(favorite)
@@ -20,7 +20,7 @@ class NasaSearchService
       req.params["api_key"] = ENV["NASA_API_KEY"]
     end
 
-    FavAsteroid.find(favorite, parse(response))
+    parse(response)
   end
 
   def self.parse(response)

@@ -7,11 +7,7 @@ class DaySearchResults
   end
 
   def self.search(start_date, end_date)
-    NasaSearchService.get_danger_day(start_date, end_date)
-  end
-
-  def self.results(data)
-    new(data)
+    new(NasaSearchService.get_danger_day(start_date, end_date))
   end
 
   def asteroids_by_day(data)
