@@ -21,6 +21,6 @@ class Api::V1::User::FavoritesController < ApplicationController
     end
 
     def favorite_asteroids(favorite)
-      AsteroidSearchService.find(favorite)
+      FavAsteroid.search(favorite)
     end
 end

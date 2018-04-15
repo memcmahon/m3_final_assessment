@@ -9,4 +9,8 @@ class FavAsteroid
   def self.find(favorite, asteroid)
     new(favorite, asteroid)
   end
+
+  def self.search(favorite)
+    AsteroidSearchService.find(favorite)
+  end
 end
