@@ -24,9 +24,7 @@ class DaySearchResults
     def danger_day(data)
       @most_dangerous_date = asteroids_by_day(data).sort_by do |key, value|
         value
-      end.last[0].to_s
-
-      DateTime.strptime(@most_dangerous_date, "%Y-%m-%d").strftime("%B %-d, %Y")
+      end.last[0]
     end
 
     def hazardous_asteroids(data, date)

@@ -8,7 +8,7 @@ class MostDangerousDayPresenter
   end
 
   def most_dangerous_day
-    @search_result.most_dangerous_day
+    DateTime.strptime(@search_result.most_dangerous_day.to_s, "%Y-%m-%d").strftime("%B %-d, %Y")
   end
 
   def dangeroids
