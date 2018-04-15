@@ -7,7 +7,7 @@ class DaySearchResults
   end
 
   def self.search(start_date, end_date)
-    DangerDaySearchService.date_range_search(start_date, end_date)
+    NasaSearchService.get_danger_day(start_date, end_date)
   end
 
   def self.results(data)

@@ -11,6 +11,6 @@ class FavAsteroid
   end
 
   def self.search(favorite)
-    AsteroidSearchService.find(favorite)
+    NasaSearchService.get_asteroid(favorite)
   end
 end
