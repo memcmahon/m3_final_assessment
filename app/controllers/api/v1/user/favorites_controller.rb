@@ -4,6 +4,7 @@ class Api::V1::User::FavoritesController < ApplicationController
     favorites = user.favorites.map do |favorite|
       AsteroidSearchService.find(favorite)
     end
+
     render json: favorites
   end
 end

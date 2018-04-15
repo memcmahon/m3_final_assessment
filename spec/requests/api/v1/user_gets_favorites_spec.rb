@@ -9,16 +9,8 @@ describe "As a user" do
 
       get "/api/v1/user/favorites?api_key=#{api_key.value}"
 
-      binding.pry
-
       expect(response.status).to eq(200)
-      expect(response.body).to eq(([{"id"=>13,
-        "neo_reference_id"=>"2153306",
-        "user_id"=>"#{user.id}",
-        "asteroid"=>
-          {"name"=>"153306 (2001 JL1)",
-            "is_potentially_hazardous"=>false}}]).to_s)
-
+      expect(response.body).to eq("[{\"id\":13,\"neo_reference_id\":\"2153306\",\"user_id\":#{user.id},\"asteroid\":{\"name\":\"153306 (2001 JL1)\",\"neo_reference_id\":\"2153306\",\"is_potentially_hazardous\":false}}]")
     end
   end
 end
