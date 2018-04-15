@@ -8,6 +8,6 @@ class AsteroidSearchService
 
     raw_data = JSON.parse(response.body, symbolize_names: true)
 
-    FavAsteroid.new(favorite, raw_data)
+    FavAsteroid.find(favorite, raw_data)
   end
 end

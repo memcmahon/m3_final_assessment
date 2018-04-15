@@ -6,6 +6,10 @@ class DaySearchResults
     @dangeroids = hazardous_asteroids(data[:near_earth_objects], @most_dangerous_date)
   end
 
+  def self.results(data)
+    new(data)
+  end
+
   def asteroids_by_day(data)
     data.transform_values do |value|
       value.select do |asteroid|
@@ -25,7 +29,7 @@ class DaySearchResults
   def hazardous_asteroids(data, date)
     data[:"#{date}"].map do |asteroid|
       if asteroid[:is_potentially_hazardous_asteroid]
-        Asteroid.new(asteroid)
+        Asteroid.find(asteroid)
       end
     end.compact
   end

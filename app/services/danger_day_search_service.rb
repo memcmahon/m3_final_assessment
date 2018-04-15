@@ -6,7 +6,7 @@ class DangerDaySearchService
       req.params["api_key"] = ENV["NASA_API_KEY"]
     end
 
-    DaySearchResults.new(parse(response))
+    DaySearchResults.results(parse(response))
   end
 
   def self.conn

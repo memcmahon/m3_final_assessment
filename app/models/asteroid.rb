@@ -5,4 +5,8 @@ class Asteroid
     @neo_reference_id = info[:neo_reference_id]
     @is_potentially_hazardous = info[:is_potentially_hazardous_asteroid]
   end
+
+  def self.find(info)
+    new(info)
+  end
 end
