@@ -1,7 +1,5 @@
 class AsteroidSearchService
   def self.find(favorite)
-    # conn = Faraday.new("https://api.nasa.gov/neo/rest/v1/neo/#{favorite.neo_reference_id}")
-
     response = conn(favorite).get do |req|
       req.params["api_key"] = ENV["NASA_API_KEY"]
     end

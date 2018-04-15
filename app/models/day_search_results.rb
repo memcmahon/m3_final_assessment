@@ -6,6 +6,10 @@ class DaySearchResults
     @dangeroids = hazardous_asteroids(data[:near_earth_objects], @most_dangerous_date)
   end
 
+  def self.search(start_date, end_date)
+    DangerDaySearchService.date_range_search(start_date, end_date)
+  end
+
   def self.results(data)
     new(data)
   end
