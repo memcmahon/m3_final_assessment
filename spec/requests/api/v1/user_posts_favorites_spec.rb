@@ -9,7 +9,7 @@ describe "As a user" do
       post "/api/v1/user/favorites?api_key=#{api_key.value}&neo_reference_id=2021277"
 
       expect(response.status).to eq(200)
-      expect(response.body).to eq("[{\"id\":#{Favorite.last.id},\"neo_reference_id\":\"2021277\",\"user_id\":#{user.id},\"asteroid\":{\"name\":\"153306 (2001 JL1)\",\"neo_reference_id\":\"2021277\",\"is_potentially_hazardous\":false}}]")
+      expect(response.body).to eq("{\"id\":#{Favorite.last.id},\"neo_reference_id\":\"2021277\",\"user_id\":#{user.id},\"asteroid\":{\"name\":\"21277 (1996 TO5)\",\"neo_reference_id\":\"2021277\",\"is_potentially_hazardous\":false}}")
     end
   end
 end
